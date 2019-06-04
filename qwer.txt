@@ -1,0 +1,19 @@
+при нажатии на пчелки score=score-5/
+при нажатии на бабочку  game over = u lose/
+
+при нажатии на павука переход на другую игру(second location) - 
+		in the 2nd location = паутина на bg /
+		при нажатии на муху score=score+1 /
+		при нажатии на стрекозу score=score+2 /
+		if score=10 u win
+		(timer = 15s)
+условие - бабочка onclick score=10 u win|
+		
+
+
+
+
+
+
+
+

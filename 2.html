@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.block{
+			position: absolute;
+			height: 100px;
+			width: 100px;
+		}
+	</style>
+</head>
+<body style="background-image: url(bg.jpg); background-size: 50%" class="main">
+
+<h1 style="color: white">Очки: <span class="score">0</span></h1>
+
+</body>
+<script type="text/javascript">
+	let tmr = 15
+	let interv = function(){
+	tmr=tmr-1
+	}
+	setInterval(interv,1000)
+	let main = document.querySelector(".main");
+	let score = 0;
+	let randomizator = function(arg){
+		let random = Math.random()*arg
+		let round = Math.round(random) 
+		let check = round+"px"
+		return check
+	}
+
+	let func = function(){
+		let img = document.createElement("img");
+		document.body.appendChild(img);
+		img.classList.add("block");
+		img.src = "img.svg"
+		img.style.top = randomizator(800)
+		img.style.left = randomizator(1200)
+		img.onclick = function(){
+			img.style.display='none'
+			score++;
+			document.querySelector('.score').innerHTML = score;
+		}
+	}
+	let clear = setInterval(func,700)
+
+	let func_bee = function(){
+		let img1 = document.createElement("img");
+		document.body.appendChild(img1);
+		img1.classList.add("block");
+		img1.src = "bee.png"
+		img1.style.top = randomizator(800)
+		img1.style.left = randomizator(1200)
+		img1.onclick = function(){
+			img1.style.display='none'
+			score=score-5
+			document.querySelector('.score').innerHTML = score;
+		}
+	}
+	let clearr = setInterval(func_bee,2500)
+
+	let func_butterfly = function(){
+		let img2 = document.createElement("img");
+		document.body.appendChild(img2);
+		img2.classList.add("block");
+		img2.src = "butterfly.png"
+		img2.style.top = randomizator(800)
+		img2.style.left = randomizator(1200)
+		img2.onclick = function(){
+
+			clearInterval(clearrrr)
+			clearInterval(clearrr)
+			clearInterval(clearr)
+			clearInterval(clear)
+			let asd = document.querySelectorAll('.block')
+			for(let index = 0; index<asd.length; index = index + 1){//цикл
+				asd[index].style.display = 'none'
+			}
+			if (score>=10) {
+				alert("u win");
+				main.style.backgroundImage = "url(winner.jpg)";
+				main.style.backgroundSize = "100%";
+				main.style.transition = "2s";
+
+			} else {
+				alert("u lose")
+				main.style.backgroundImage = "url(loser.png)";
+				main.style.backgroundSize = "100%";
+				main.style.transition = "2s";
+			}
+		}		
+	}
+	let clearrr = setInterval(func_butterfly,3500)
+	
+	let func_spider = function(){
+			let img3 = document.createElement("img");
+			document.body.appendChild(img3);
+			img3.classList.add("block");
+			img3.src = "spider.png"
+			img3.style.top = randomizator(800)
+			img3.style.left = randomizator(1200)
+			img3.onclick = function(){
+				main.style.backgroundImage = 'url(qwer.jpg)'
+				main.style.backgroundSize = '100%'
+				clearInterval(clearrrr)
+				clearInterval(clearrr)
+				clearInterval(clearr)
+				clearInterval(clear)
+				let asd = document.querySelectorAll('.block')
+				for(let index = 0; index<asd.length; index = index + 1){//цикл
+					asd[index].style.display = 'none'
+				}
+				let func_fly = function(){
+				let img4 = document.createElement("img");
+				document.body.appendChild(img4);
+				img4.classList.add("block");
+				img4.src = "fly.png"
+				img4.style.top = randomizator(800)
+				img4.style.left = randomizator(1200)
+					img4.onclick = function(){
+					img4.style.display='none'
+					score=score+1
+					document.querySelector('.score').innerHTML = score;
+					}
+				}
+				let clear1 = setInterval(func_fly,1000)
+
+				let func_strekoza = function(){
+				let img5 = document.createElement("img");
+				document.body.appendChild(img5);
+				img5.classList.add("block");
+				img5.src = "strekoza.png"
+				img5.style.top = randomizator(800)
+				img5.style.left = randomizator(1200)
+					img5.onclick = function(){
+					img5.style.display='none'
+					score=score+2
+					document.querySelector('.score').innerHTML = score;
+					}
+				}
+				let clear2 = setInterval(func_strekoza,2000)
+			}	
+		}
+	let clearrrr = setInterval(func_spider,5000)
+
+
+</script>
+</body>
+</html>
